@@ -6,3 +6,11 @@ x86_64
 gcc  
 Linux  
 Python3.8  
+
+# 使い方
+```
+$ echo "1+2*3-4" > expr.txt
+$ python3.8 calc.py expr.txt 
+Expression: 1+2*3-4
+Result: 3
+```
