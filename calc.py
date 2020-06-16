@@ -112,16 +112,6 @@ def create_tree(tokens):
 
     return Node(tokens[0], None, None)
 
-# For debug
-def print_tree(node, indent=0):
-    if node is None:
-        return
-    for i in range(indent):
-        print(' ', end='')
-    print(node.token)
-    print_tree(node.left, indent+1)
-    print_tree(node.right, indent+1)
-
 def write_asm(node, f):
     if node.token.token_type == TokenType.NUM:
         f.write(f'  push {node.token.num}\n')
@@ -188,8 +178,6 @@ if __name__ == '__main__':
     tokens = tokenize(expr)
     
     tree = create_tree(tokens)
-
-    #print_tree(tree)
 
     asm_name = 'calc.s'
     bin_name = 'calc'
